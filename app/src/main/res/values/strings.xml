@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Healthify</string>
+    <string-array name="categ_array">
+        <item>Doctor</item>
+        <item>Patient</item>
+        <item>Chemist</item>
+    </string-array>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970103833069",
+    "project_id": "apputil-1744c",
+    "storage_bucket": "apputil-1744c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970103833069:android:3ec4ed15a4724bae9067e4",
+        "android_client_info": {
+          "package_name": "com.example.apputil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970103833069-otltpk2m0u1i0had8ah1l5o3ae3eof5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRcyoPm0CrZ1b4wJ5Ns1F_n25A15WCkBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970103833069-otltpk2m0u1i0had8ah1l5o3ae3eof5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

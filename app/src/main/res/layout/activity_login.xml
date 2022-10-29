@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:gravity="center"
+
+    android:background="@drawable/logo">
+    <androidx.cardview.widget.CardView
+        android:padding="15dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imagelogo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/applogo"
+        />
+
+
+    <EditText
+        android:textSize="13sp"
+        android:layout_below="@id/imagelogo"
+        android:id="@+id/login_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Email Id"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textColorHint="#202b2c" />
+
+    <EditText
+        android:textSize="13sp"
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_email_id"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColorHint="#202b2c" />
+    <Button
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:background="@drawable/button_background"
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_password"
+        />
+    <TextView
+        android:textSize="13sp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_login"
+        android:id="@+id/loginToReg"
+        android:textStyle="bold"
+        android:textColor="#202b2c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not yet registered? Register Now!"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
