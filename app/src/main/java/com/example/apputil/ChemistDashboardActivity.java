@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,16 +29,36 @@ import java.util.List;
 public class ChemistDashboardActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     RecyclerView recyclerView;
-    DatabaseReference medicinesRef;
+    DatabaseReference medicinesRef,userRef,currUserRef;
+    FirebaseAuth mAuth;
+    String currentUserId;
     MedicineAdapter medicineAdapter;
     ArrayList<Medicine> list;
     FloatingActionButton addMedicine;
+    TextView mChemistName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chemist_dashboard);
+        mAuth=FirebaseAuth.getInstance();
+        currentUserId=mAuth.getCurrentUser().getUid();
+        userRef=FirebaseDatabase.getInstance().getReference().child("Users");
+        currUserRef=userRef.child(currentUserId);
         addMedicine=findViewById(R.id.add_medicine);
+        mChemistName=findViewById(R.id.chemist_name);
+        currUserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String chemist_name=snapshot.child("name").getValue().toString();
+                mChemistName.setText(chemist_name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         recyclerView=findViewById(R.id.medicines_recycler);

@@ -1,6 +1,8 @@
 package com.example.apputil;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +32,21 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
 
     @Override
     public void onBindViewHolder(@NonNull MedicineViewHolder holder, int position) {
+        String medicine_id=medicines.get(position).getMedicineId();
         holder.name.setText(medicines.get(position).getName());
         holder.id.setText(medicines.get(position).getMedicineId());
         holder.quantity.setText(medicines.get(position).getQuantity());
         holder.expiryDate.setText(medicines.get(position).getExpiryDate());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,ViewMedicine.class);
+                intent.putExtra("MedicineKey",medicine_id);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override

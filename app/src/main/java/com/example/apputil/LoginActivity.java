@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -155,6 +156,28 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+        }
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        if(currentUser!=null){
+            currUserId=mAuth.getCurrentUser().getUid();
+            currUserRef=userRef.child(currUserId);
+            currUserRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String category=snapshot.child("category").getValue().toString();
+                    Toast.makeText(LoginActivity.this, category, Toast.LENGTH_SHORT).show();
+                    sendUserToDashboard(category);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
     }
 }

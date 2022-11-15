@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +36,17 @@ public class AddMedicineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medicine);
+
+        DisplayMetrics dm=new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width=dm.widthPixels;
+        int height=dm.heightPixels;
+        getWindow().setLayout((int)(width),(int) (height*.70));
+
+        WindowManager.LayoutParams windowManager = getWindow().getAttributes();
+        windowManager.dimAmount = 0.60f;
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+
         mAuth=FirebaseAuth.getInstance();
         currUserId=mAuth.getCurrentUser().getUid();
         mMedicineId=findViewById(R.id.medicine_id);

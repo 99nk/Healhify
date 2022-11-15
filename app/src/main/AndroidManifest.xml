@@ -15,65 +15,73 @@
         android:theme="@style/Theme.AppUtil"
         tools:targetApi="31">
         <activity
+            android:name=".ViewMedicine"
+            android:exported="false"
+            android:theme="@style/Dialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CheckDoctorScheduleActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".CreateRecordActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".PatientDashboardActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".PatientProfileActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".DoctorProfileActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ChemistDashboardActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".DoctorDashboardActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ChemistProfileActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -85,15 +93,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".AddMedicineActivity"
-            android:theme="@style/Dialog"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".AddMedicineActivity"
             android:exported="false"
             android:theme="@style/Dialog">
             <meta-data
@@ -101,7 +102,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Dialog">
             <intent-filter>
@@ -109,7 +110,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Dialog">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
