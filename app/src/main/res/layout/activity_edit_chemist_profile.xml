@@ -7,7 +7,7 @@
     android:gravity="center"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    tools:context=".DoctorProfileActivity">
+    tools:context=".EditChemistProfileActivity">
     <LinearLayout
         android:layout_above="@id/bottom_navigation"
         android:orientation="vertical"
@@ -19,38 +19,39 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:src="@drawable/profilelogo"/>
-        <TextView
-            android:id="@+id/doctor_profile_name"
+        <EditText
+            android:inputType="text"
+            android:id="@+id/chemist_profile_name"
             android:layout_marginTop="80dp"
             android:layout_width="match_parent"
             android:textSize="13sp"
             android:background="@drawable/edit_text_background"
             android:padding="10dp"
             android:layout_height="wrap_content"
-            android:text="Name:"
             />
-        <TextView
-            android:id="@+id/doctor_profile_email"
+        <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/chemist_profile_email"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:textSize="13sp"
             android:background="@drawable/edit_text_background"
             android:padding="10dp"
             android:layout_height="wrap_content"
-            android:text="Email:"
             />
-        <TextView
-            android:id="@+id/doctor_profile_phone"
+        <EditText
+            android:inputType="phone"
+            android:id="@+id/chemist_profile_phone"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:textSize="13sp"
             android:background="@drawable/edit_text_background"
             android:padding="10dp"
             android:layout_height="wrap_content"
-            android:text="Phone Number:"
             />
-        <TextView
-            android:id="@+id/doctor_profile_category"
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/chemist_profile_category"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:textSize="13sp"
@@ -60,10 +61,10 @@
             android:text="Category:"
             />
         <Button
-            android:id="@+id/editProfile"
+            android:id="@+id/updateChemistProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Profile"
+            android:text="Update"
             android:textAllCaps="false"
             android:background="@drawable/button_background"
             android:layout_marginTop="10dp"/>

@@ -14,18 +14,25 @@
         android:scaleType="fitCenter"
         android:src="@drawable/applogo"
         />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="15dp"
-        android:layout_below="@id/imagelogo"
         android:id="@+id/records_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation"/>
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/imagelogo"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="@drawable/edit_text_background"
+        app:itemIconTint="@color/bottom_nav"
+        app:itemTextColor="@color/bottom_nav"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_bar_menu"/>
 

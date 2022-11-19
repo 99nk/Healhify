@@ -15,6 +15,30 @@
         android:theme="@style/Theme.AppUtil"
         tools:targetApi="31">
         <activity
+            android:name=".EditPatientProfileActivity"
+            android:exported="false"
+            android:theme="@style/Dialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EditDoctorProfileActivity"
+            android:exported="false"
+            android:theme="@style/Dialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EditChemistProfileActivity"
+            android:exported="false"
+            android:theme="@style/Dialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ViewMedicine"
             android:exported="false"
             android:theme="@style/Dialog">
@@ -110,6 +134,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

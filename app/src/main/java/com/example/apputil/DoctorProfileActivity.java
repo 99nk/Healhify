@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +24,7 @@ public class DoctorProfileActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     String currentUserId;
     TextView name, email, category, phone;
+    Button editProfile;
 
 
     @Override
@@ -36,6 +39,15 @@ public class DoctorProfileActivity extends AppCompatActivity {
         email=findViewById(R.id.doctor_profile_email);
         category=findViewById(R.id.doctor_profile_category);
         phone=findViewById(R.id.doctor_profile_phone);
+        editProfile=findViewById(R.id.editProfile);
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profile_intent=new Intent(DoctorProfileActivity.this,EditDoctorProfileActivity.class);
+                profile_intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(profile_intent);
+            }
+        });
         currUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

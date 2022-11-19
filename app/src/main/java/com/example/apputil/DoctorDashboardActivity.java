@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,7 +34,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
     ArrayList<Record> list;
     FloatingActionButton postReport;
     EditText mPatientId;
-    Button mSearchPatientId;
+    ImageButton mSearchPatientId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +79,11 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 for(DataSnapshot snapshot: datasnapshot.getChildren()){
                     Record record=new Record();
                     if(snapshot.child("patientId").getValue().toString().equals(PatientId)){
-                        record.setName(snapshot.child("name").getValue().toString());
-                        record.setAge(snapshot.child("age").getValue().toString());
-                        record.setDate(snapshot.child("date").getValue().toString());
-                        record.setProblem(snapshot.child("problem").getValue().toString());
-                        record.setMedicines(snapshot.child("medicines").getValue().toString());
+                        record.setName("Patient Name: "+snapshot.child("name").getValue().toString());
+                        record.setAge("Age: "+snapshot.child("age").getValue().toString());
+                        record.setDate("Date: "+snapshot.child("date").getValue().toString());
+                        record.setProblem("Diagnosis: "+snapshot.child("problem").getValue().toString());
+                        record.setMedicines("Medicines Prescribed: "+snapshot.child("medicines").getValue().toString());
                         list.add(record);
                     }
                 }

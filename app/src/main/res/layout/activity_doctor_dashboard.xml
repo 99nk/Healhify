@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DoctorDashboardActivity"
-    android:layout_margin="15dp">
+    android:layout_marginTop="15dp">
     <ImageView
         android:layout_centerHorizontal="true"
         android:id="@+id/imagelogo"
@@ -15,27 +15,46 @@
         android:scaleType="fitCenter"
         android:src="@drawable/applogo"
         />
-    <EditText
-        android:layout_below="@id/imagelogo"
-        android:padding="10dp"
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:weightSum="10"
+        android:id="@+id/ll"
         android:background="@drawable/edit_text_background"
-        android:id="@+id/patient_id"
+        android:layout_below="@id/imagelogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Patient Id"/>
-    <Button
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+    <EditText
+        android:layout_below="@id/imagelogo"
+        android:textSize="15sp"
         android:padding="10dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/button_background"
+        android:textColorHint="@color/white"
+        android:background="@drawable/edit_text_background"
+        android:id="@+id/patient_id"
+        android:layout_width="0dp"
+        android:layout_weight="9"
+        android:layout_height="wrap_content"
+        android:hint="Enter Patient Id"/>
+    <ImageButton
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/edit_text_background"
         android:id="@+id/search_patient_id"
         android:text="Search"
+        android:src="@drawable/ic_baseline_search_24"
         android:layout_below="@id/patient_id"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:visibility="gone"
-        android:layout_below="@id/search_patient_id"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/ll"
         android:id="@+id/records_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,6 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/edit_text_background"
+        app:itemIconTint="@color/bottom_nav"
+        app:itemTextColor="@color/bottom_nav"
         app:menu="@menu/bottom_navigation_bar_menu"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -58,6 +80,6 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:src="@drawable/ic_doctor_schedule" />
+        android:src="@drawable/ic_add" />
 
 </RelativeLayout>

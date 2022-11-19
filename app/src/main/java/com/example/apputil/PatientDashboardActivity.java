@@ -70,11 +70,11 @@ public class PatientDashboardActivity extends AppCompatActivity {
                 for(DataSnapshot snapshot: datasnapshot.getChildren()){
                     Record record=new Record();
                     if(snapshot.child("patientId").getValue().toString().equals(currentUserId)){
-                        record.setName("Name: "+snapshot.child("name").getValue().toString());
+                        record.setName("Consultant's Name: "+snapshot.child("name").getValue().toString());
                         record.setAge("Age: "+snapshot.child("age").getValue().toString());
                         record.setDate("Date: "+snapshot.child("date").getValue().toString());
-                        record.setProblem("Problem: "+snapshot.child("problem").getValue().toString());
-                        record.setMedicines("Medicines: "+snapshot.child("medicines").getValue().toString());
+                        record.setProblem("Diagnosis: "+snapshot.child("problem").getValue().toString());
+                        record.setMedicines("Medicines Prescribed: "+snapshot.child("medicines").getValue().toString());
                         list.add(record);
                     }
                 }
