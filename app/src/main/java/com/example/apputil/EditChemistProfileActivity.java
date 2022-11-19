@@ -111,6 +111,10 @@ public class EditChemistProfileActivity extends AppCompatActivity {
                             home_intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(home_intent);
                             break;
+                        case R.id.settings:
+                            Intent settings_intent=new Intent(EditChemistProfileActivity.this,SettingsActivity.class);
+                            startActivity(settings_intent);
+                            break;
                     }
                     return true;
                 }
